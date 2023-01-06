@@ -7,5 +7,39 @@
 }
 
 .hwTitle {
-
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 27px;
+    padding-top: 20px;
+    margin-left: 70px;
+}
+.hwContainer {
+    max-width: 1140px;
+    margin: 0 auto;
+    height: 336px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: auto;
+}
+.hwContainer::-webkit-scrollbar {
+    width: 0;
+}
+.hwTopLine {
+    background: #D9D9D9;
+    height: 1px;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 24px;
+}
+.hwBottomLine {
+    background: #D9D9D9;
+    height: 1px;
+    width: 100%;
+}
+.messagesContainer {
+    display: flex;
+    justify-content: space-between;
 }
