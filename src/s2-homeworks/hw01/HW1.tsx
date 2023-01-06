@@ -32,7 +32,7 @@ type Message = {
 
 // структуру объекта не менять
 export const message0: MessageType = {
-    id: 0,
+    id: 1,
     user: {
         avatar: avatar, // можно менять
         name: 'Ivan',  // можно менять
