@@ -1,5 +1,5 @@
 .input:focus {
-
+    border: 1px solid #0080FF;
 }
 
 .input {
@@ -7,15 +7,18 @@
     border-radius: 5px;
     padding: 5px 10px;
     outline: none;
+    margin-bottom: 24px;
 }
 
 .inputWrapper {
+
 }
 
 .superInput {
 }
 
 .errorInput {
+    border: 1px solid #b31232;
 }
 
 .errorInput:focus {

@@ -18,16 +18,15 @@ const SuperButton: React.FC<SuperButtonPropsType> = (
         ...restProps // все остальные пропсы попадут в объект restProps, там же будет children
     }
 ) => {
-    let redBtn = `${restProps.children === 'red' ? `${s.red}` : ''}`
-    let defaultBtn = `${restProps.children === 'default' ? `${s.default}` : ''}`
-    let secondaryBtn = `${restProps.children === 'secondary' ? `${s.secondary}` : ''}`
-    let disabledBtn = `${restProps.children === 'disabled' ? `${s.disabled}` : ''}`
+    let redBtn = `${xType === 'red' ? `${s.red}` : ''}`
+    let defaultBtn = `${xType === 'default' ? `${s.default}` : ''}`
+    let secondaryBtn = `${xType === 'secondary' ? `${s.secondary}` : ''}`
+    let disabledBtn = `${xType === 'disabled' ? `${s.disabled}` : ''}`
 
     const finalClassName = `${s.button} ${redBtn} ${defaultBtn} ${secondaryBtn} ${disabledBtn}`
 
     return (
         <button
-            disabled={disabled}
             className={finalClassName}
             {...restProps} // отдаём кнопке остальные пропсы если они есть (children там внутри)
         />

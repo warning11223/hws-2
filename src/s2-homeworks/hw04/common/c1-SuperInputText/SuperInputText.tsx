@@ -19,6 +19,7 @@ type SuperInputTextPropsType = Omit<DefaultInputPropsType, 'type'> & {
     onEnter?: () => void
     error?: ReactNode
     spanClassName?: string
+    setError?: (value: boolean) => void
 }
 
 const SuperInputText: React.FC<SuperInputTextPropsType> = (
@@ -31,27 +32,37 @@ const SuperInputText: React.FC<SuperInputTextPropsType> = (
         className,
         spanClassName,
         id,
+        setError,
         ...restProps // все остальные пропсы попадут в объект restProps
     }
 ) => {
     const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
         onChange?.(e) // если есть пропс onChange, то передать ему е (поскольку onChange не обязателен)
 
+        setError!(false)
         onChangeText?.(e.currentTarget.value)
     }
     const onKeyPressCallback = (e: KeyboardEvent<HTMLInputElement>) => {
         onKeyPress?.(e)
 
-        onEnter && // если есть пропс onEnter
+        if (onEnter && e.key === 'Enter' && e.currentTarget.value.trim() !== '') {
+            onEnter()
+        } else {
+            setError!(true)
+        }
+        /*onEnter && // если есть пропс onEnter
         e.key === 'Enter' && // и если нажата кнопка Enter
-        onEnter() // то вызвать его
+        e.currentTarget.value.trim() !== '' &&
+        onEnter() // то вызвать его*/
     }
 
     const finalSpanClassName = s.error
         + (spanClassName ? ' ' + spanClassName : '')
-    const finalInputClassName = s.input
+    const finalInputClassName = `${s.input} ${error ? s.errorInput : ''}`
+
+    /*s.input
         + (error ? ' ' + s.errorInput : ' ' + s.superInput)
-        + (className ? ' ' + s.className : '') // задача на смешивание классов
+        + (className ? ' ' + s.className : '') */// задача на смешивание классов
 
     return (
         <div className={s.inputWrapper}>
@@ -59,7 +70,7 @@ const SuperInputText: React.FC<SuperInputTextPropsType> = (
                 id={id ? id + '-span' : undefined}
                 className={finalSpanClassName}
             >
-                {error}
+                {error ? <span>Enter text please</span> : ''}
             </div>
             <input
                 id={id}
