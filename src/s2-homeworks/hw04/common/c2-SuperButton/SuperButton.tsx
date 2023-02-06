@@ -7,7 +7,6 @@ type DefaultButtonPropsType = DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonE
 
 type SuperButtonPropsType = DefaultButtonPropsType & {
     xType?: string
-    children: React.ReactNode
 }
 
 const SuperButton: React.FC<SuperButtonPropsType> = (

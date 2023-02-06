@@ -1,2 +1,6 @@
 .container {
+    display: flex;
+    gap: 127px;
+    justify-content: center;
+    align-items: flex-start;
 }

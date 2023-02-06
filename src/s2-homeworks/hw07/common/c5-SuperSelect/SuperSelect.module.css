@@ -1,4 +1,7 @@
 .select {
+    padding: 2px 45px 2px 2px;
+    cursor: pointer;
+    outline: none;
 }
 
 .select:focus {
