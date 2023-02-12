@@ -10,10 +10,22 @@ export const homeWorkReducer = (state: UserType[], action: ActionType): UserType
             let stateCopy;
 
             if (action.payload === 'up') {
-                stateCopy = state.sort((a, b) => a.name.localeCompare(b.name));
+                stateCopy = state.sort((a, b) => {
+                    if (a.name > b.name) {
+                        return 1;
+                    } else {
+                        return -1;
+                    }
+                });
                 return stateCopy;
             } else if (action.payload === 'down') {
-                stateCopy = state.sort((a, b) => b.name.localeCompare(a.name));
+                stateCopy = state.sort((a, b) => {
+                    if (a.name < b.name) {
+                        return 1;
+                    } else {
+                        return -1;
+                    }
+                });
                 return stateCopy;
             } else {
                 return state;
