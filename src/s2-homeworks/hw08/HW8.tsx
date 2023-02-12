@@ -52,7 +52,9 @@ const HW8 = () => {
         ) // совершеннолетние
         setCurrentSort('18')
     }
-    console.log(currentSort)
+
+    console.log(initialPeople)
+
     return (
         <div id={'hw3'}>
             <div className={s2.hwTitle}>Homework #8</div>

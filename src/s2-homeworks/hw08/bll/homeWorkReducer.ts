@@ -11,7 +11,7 @@ export const homeWorkReducer = (state: UserType[], action: ActionType): UserType
 
             if (action.payload === 'up') {
                 stateCopy = state.sort((a, b) => {
-                    if (a.name > b.name) {
+                    if (a.name < b.name) {
                         return 1;
                     } else {
                         return -1;
@@ -20,7 +20,7 @@ export const homeWorkReducer = (state: UserType[], action: ActionType): UserType
                 return stateCopy;
             } else if (action.payload === 'down') {
                 stateCopy = state.sort((a, b) => {
-                    if (a.name < b.name) {
+                    if (a.name > b.name) {
                         return 1;
                     } else {
                         return -1;
