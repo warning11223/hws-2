@@ -1,4 +1,8 @@
 .item {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    border-bottom: 1px solid #E5E5E5;
 }
 
 .item:last-of-type {
@@ -8,16 +12,49 @@
 }
 
 .buttonsContainer {
+    display: flex;
+    justify-content: flex-end;
+    max-width: 606px;
+    margin-bottom: 18px;
+    gap: 12px;
 }
 
 .container {
 }
 
 .thead {
+    background: #E5E5E5;
+    padding: 11px 0px 9px 17px;
+    display: flex;
+    width: 606px;
 }
 
 .nameCol {
-}
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
 
+    color: #000000;
+
+}
+.ageItem {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    color: #000000;
+    margin-right: 272px;
+}
 .ageCol {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    color: #000000;
+
+    padding-left: 218px;
 }
