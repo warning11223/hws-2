@@ -50,12 +50,16 @@ function Clock() {
         setShow(false);
     }
 
-    const stringTime = date.toLocaleTimeString() || <br/> // часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
+    const stringTime2 = date.toLocaleTimeString('ru-Ru');
+
+    const stringTime = stringTime2.substring(0, stringTime2.length - 3) || <br/> // часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
     const stringDate = formatDate(date) || <br/> // день.месяц.год (01.02.2022) // пишут студенты, варианты 01.02.0123/01.02.-123/01.02.12345 не рассматриваем
 
     // день недели на английском, месяц на английском (https://learn.javascript.ru/intl#intl-datetimeformat)
     const stringDay = date.toLocaleString('en-us', {  weekday: 'long' }) || <br/> // пишут студенты
     const stringMonth = date.toLocaleString('en-us', {  month: 'long' }) || <br/> // пишут студенты
+
+    console.log(stringTime)
 
     return (
         <div className={s.clock}>
